@@ -1,0 +1,14 @@
+.background{
+    background: #111;
+}
+
+.auth-section {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 0;
+    margin: 100px auto 50px auto;
+    border-bottom: 3px solid #f1af5d;
+}
