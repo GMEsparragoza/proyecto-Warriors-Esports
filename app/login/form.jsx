@@ -1,17 +1,50 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { UserAuth } from '@/utils/AuthContext';
+import { useAlert } from '@/utils/AlertContext';
+import { useRouter } from 'next/navigation'; // Importar useRouter
 
 export const Form = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const {HandleLogin, loading, message, error} = UserAuth();
+    const {handleLogin, loading, error, user, initialLoading} = UserAuth();
+    const {mostrarAlerta} = useAlert();
+    const router = useRouter(); // Inicializar el enrutador
+
+    useEffect(() => {
+        if (!initialLoading && user) {
+            router.push("/admin");
+        }
+    }, [user, initialLoading, router]);
+
+    if (initialLoading) {
+        return <p>Verificando autenticación...</p>; // Spinner o mensaje de carga
+    }
 
     const submitAuth = async (e) => {
         e.preventDefault();
-        await HandleLogin(email, password);
+        if(!email || !password){
+            mostrarAlerta({
+                bien: false,
+                titulo: "¡Error al iniciar sesion!",
+                parrafo: "Datos faltantes en el formulario."
+            });
+            return;
+        }
+        try {
+            await handleLogin(email, password);
+            mostrarAlerta({
+                bien: true,
+                titulo: "¡Sesion Iniciada!",
+                parrafo: "Inicio de sesion realizado correctamente"
+            });
+            router.push('/admin');
+        } catch (err) {
+            console.error("Error en handleRegister:", err);
+        }
     }
+
     return (
         <>
             <form id="loginForm" className="input-group">
@@ -29,11 +62,10 @@ export const Form = () => {
                     placeholder="Contraseña" 
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type='submit' onClick={() => submitAuth()} className="submit-btn">
+                <button type='submit' onClick={(e) => submitAuth(e)} className="submit-btn">
                     {loading ? "Iniciando Sesion..." : "Iniciar Sesion"}
                 </button>
                 {error && <p style={{ color: "red" }}>{error}</p>}
-                {message && <p style={{ color: "green" }}>{message}</p>}
             </form>
         </>
     )

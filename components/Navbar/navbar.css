@@ -110,8 +110,7 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-    z-index: 3;
-    display: none;
+    z-index: 5;
     flex-direction: column;
     align-items: center;
     font-size: larger;
@@ -123,13 +122,14 @@
     transition: all 0.3s;
 }
 
-.sidebar a{
+.side-nav-titulo{
     height: 100%;
     width: 100%;
     padding: 0px 10px;
     text-decoration: none;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .sidebar a::after{
@@ -199,7 +199,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 /* Estilo para las líneas de la "X" */

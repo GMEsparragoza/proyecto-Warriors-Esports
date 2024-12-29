@@ -1,23 +1,24 @@
 "use client"
 
 import Link from 'next/link'
-import React from 'react'
+import React, {useState} from 'react'
+import { UserAuth } from '@/utils/AuthContext'
 import './navbar.css'
 
 export const Navbar = () => {
+    const [sideBar, setSideBar] = useState(false);
+    const { user } = UserAuth();
 
     function showSidebar() {
-        const sidebar = document.querySelector('.sidebar')
-        console.log(sidebar);
+        setSideBar(true);
     }
     function hideSidebar() {
-        const sidebar = document.querySelector('.sidebar')
-        console.log(sidebar);
+        setSideBar(false);
     }
     return (
         <>
             <nav id="navbar">
-                <ul className="sidebar">
+                <ul className={sideBar ? 'sidebar' : 'vanish'}>
                     <li className="logo">
                         <img src="/Logo Warriors.jpeg" alt="Logo-Warriors" />
                         <h2 className="side-nav-titulo">Warriors Esports</h2>
@@ -26,7 +27,9 @@ export const Navbar = () => {
                     <li><Link className="side-nav-titulo" href="/">Inicio</Link></li>
                     <li><Link className="side-nav-titulo" href="/equipos">Equipos</Link></li>
                     <li><Link className="side-nav-titulo" href="/postulaciones">Postulaciones</Link></li>
-                    <li><Link className="side-nav-titulo botonSide" href="/login">Iniciar Sesion</Link></li>
+                    <li>
+                        <Link className="side-nav-titulo botonSide" href={user ? '/admin':'/login'}>{user ? 'Admin':'Iniciar Sesion'}</Link>
+                    </li>
                 </ul>
                 <div className="navbar">
                     <div className="logo">
@@ -37,7 +40,9 @@ export const Navbar = () => {
                         <li className="hideOnmobile"><Link className="nav-titulo" href="/">Inicio</Link></li>
                         <li className="hideOnmobile"><Link className="nav-titulo" href="/equipos">Equipos</Link></li>
                         <li className="hideOnmobile"><Link className="nav-titulo" href="/postulaciones">Postulaciones</Link></li>
-                        <li className="hideOnmobile"><Link className="nav-titulo botonNav" href="/login">Iniciar Sesion</Link></li>
+                        <li className="hideOnmobile">
+                            <Link className="nav-titulo botonNav" href={user ? '/admin':'/login'}>{user ? 'Admin':'Iniciar Sesion'}</Link>
+                        </li>
                         <li className="Boton-SideBar" onClick={() => showSidebar()}>
                             <div className="menu-icon">
                                 <div className="bar"></div>

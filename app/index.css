@@ -1,7 +1,7 @@
-.background {
+.background-inicio {
     background-color: #f1af5d;
+    height: 100vh;
 }
-
 
 .presentacion-container {
     display: flex;
@@ -57,4 +57,23 @@
     margin: 20px;
     padding: 20px;
     text-align: center;
+}
+
+/* Media queries para hacer el diseño responsive */
+@media (max-width: 1092px) {
+    .Post {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .Post {
+        flex-basis: 100%;
+    }
+    .presentacion {
+        width: 95%;
+    }
+    .PostulacionesHTML{
+        width: 95%;
+    }
 }

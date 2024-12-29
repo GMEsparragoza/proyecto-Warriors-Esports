@@ -10,8 +10,8 @@ export const metadata = {
 function page() {
     return (
         <>
-            <div className="background">
-                <section id="auth-section" className="auth-section">
+            <div className="background-login">
+                <section id="auth-section" className="auth-section-login">
                     <div className="container">
                         <div className="form-box">
                             <div className="button-box">

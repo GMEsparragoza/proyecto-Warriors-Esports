@@ -1,8 +1,9 @@
-.background{
+.background-login{
     background: #111;
+    height: 100vh;
 }
 
-.auth-section {
+.auth-section-login {
     height: 100vh;
     width: 100%;
     display: flex;
