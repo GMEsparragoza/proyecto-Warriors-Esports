@@ -15,8 +15,8 @@ function page() {
                     <div className="container">
                         <div className="form-box">
                             <div className="button-box">
-                                <div id="btn"></div>
-                                <input type="button" value="Iniciar Sesión" className="toggle-btn" />
+                                <div id="btn-login"></div>
+                                <input type="button" value="Iniciar Sesión" className="toggle-btn-login" />
                             </div>
                             <Form/>
                         </div>

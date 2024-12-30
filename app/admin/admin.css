@@ -1,6 +1,6 @@
 .background {
     background: #111;
-    height: 150vh;
+    height: 260vh;
 }
 
 .auth-section {
@@ -93,11 +93,18 @@
     border: 0;
     outline: none;
     position: relative;
-    color: #000000;
+    color: #edededcd;
     flex: 1;
     z-index: 1;
     font-size: 16px;
     font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-btn.active {
+    color: #000;
+    border-radius: 30px;
 }
 
 #btn-validar {
@@ -108,7 +115,7 @@
     height: 100%;
     background: linear-gradient(to right, #fab764, #f6a43e);
     border-radius: 30px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .input-group {
@@ -202,23 +209,6 @@ input[type="number"]::-webkit-inner-spin-button {
     color: rgba(255, 255, 255, 0.7);
 }
 
-#butPlayerValidar {
-    color: #000000;
-}
-
-#butStaffValidar {
-    color: #edededcd;
-}
-
-#butPlayerValidar:hover {
-    cursor: pointer;
-}
-
-#butStaffValidar:hover {
-    cursor: pointer;
-}
-
-
 #btn-Modificar {
     top: 0;
     left: 0;
@@ -230,14 +220,6 @@ input[type="number"]::-webkit-inner-spin-button {
     transition: .5s;
 }
 
-#butPlayerModificar {
-    color: #000000;
-}
-
-#butStaffModificar {
-    color: #edededcd;
-}
-
 #butPlayerModificar:hover {
     cursor: pointer;
 }
@@ -245,8 +227,6 @@ input[type="number"]::-webkit-inner-spin-button {
 #butStaffModificar:hover {
     cursor: pointer;
 }
-
-
 
 #btn-Eliminar {
     top: 0;
@@ -257,14 +237,6 @@ input[type="number"]::-webkit-inner-spin-button {
     background: linear-gradient(to right, #fab764, #f6a43e);
     border-radius: 30px;
     transition: .5s;
-}
-
-#butPlayerEliminar {
-    color: #000000;
-}
-
-#butStaffEliminar {
-    color: #edededcd;
 }
 
 #butPlayerEliminar:hover {
@@ -279,6 +251,9 @@ input[type="number"]::-webkit-inner-spin-button {
 @media (max-width: 768px) {
     .container {
         margin: 20px 0;
+    }
+    .background{
+        height: 450vh;
     }
 }
 

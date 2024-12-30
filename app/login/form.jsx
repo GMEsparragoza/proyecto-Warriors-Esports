@@ -19,7 +19,7 @@ export const Form = () => {
     }, [user, initialLoading, router]);
 
     if (initialLoading) {
-        return <p>Verificando autenticación...</p>; // Spinner o mensaje de carga
+        return <p className='verificando'>Verificando autenticación...</p>; // Spinner o mensaje de carga
     }
 
     const submitAuth = async (e) => {
