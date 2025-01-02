@@ -42,12 +42,10 @@
     .Post {
         flex-basis: 100%;
     }
-
     .presentacion {
         width: 95%;
     }
-
-    .PostulacionesHTML {
+    .PostulacionesHTML{
         width: 95%;
     }
 }
@@ -60,8 +58,7 @@
     border-radius: 50%;
 }
 
-.Post h2,
-.Post h3 {
+.Post h2, .Post h3 {
     color: #f1af5d;
     margin: 10px 0;
     text-align: center;
@@ -85,8 +82,7 @@
 
 .Requisitos {
     padding: 20px;
-    flex-grow: 1;
-    /* Añadido para que ocupe el espacio disponible */
+    flex-grow: 1; /* Añadido para que ocupe el espacio disponible */
     display: flex;
     flex-direction: column;
 }
