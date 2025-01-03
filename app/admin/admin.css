@@ -1,6 +1,5 @@
 .background {
     background: #111;
-    height: 260vh;
 }
 
 .auth-section {
@@ -48,7 +47,7 @@
     flex-direction: row;
     justify-content: center;
     padding: 20px;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
 }
 
 .container {

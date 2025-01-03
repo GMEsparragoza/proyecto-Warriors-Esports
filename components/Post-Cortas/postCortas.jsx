@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { ObtenerPost } from '@/firebase/postulaciones';
+import { useRouter } from 'next/navigation';
 import './post.css'
 
 const PostCortas = () => {
     const [playersPosts, setPlayersPosts] = useState([]);
     const [staffPosts, setStaffPosts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const router = useRouter();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -40,7 +42,7 @@ const PostCortas = () => {
                     <p>Disponibilidad Horaria:</p>
                     <p>{post.horario}</p>
                 </div>
-                <button type='button' className="btn-post">Postulate</button>
+                <button type='button' className="btn-post" onClick={() => router.push('/formulario')}>Postulate</button>
             </div>
         ));
     };
@@ -62,7 +64,7 @@ const PostCortas = () => {
                         </>
                     )}
                 </div>
-                <button type='button' className="btn-post">Postulate</button>
+                <button type='button' className="btn-post" onClick={() => router.push('/formulario')}>Postulate</button>
             </div>
         ));
     };

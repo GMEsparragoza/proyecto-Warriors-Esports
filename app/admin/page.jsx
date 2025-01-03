@@ -39,8 +39,8 @@ const page = () => {
                     <Eliminarusuario/>
                 </section>
                 <Adminsection />
-                <Footer />
             </div>
+            <Footer />
         </>
     )
 }
