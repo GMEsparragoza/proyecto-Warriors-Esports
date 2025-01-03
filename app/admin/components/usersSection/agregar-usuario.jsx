@@ -69,7 +69,7 @@ export const Agregarusuario = () => {
                             <input className="field-posts" type="text" value={nombre} placeholder="Nombre:" onChange={(e) => setNombre(e.target.value)}/>
                             <input className="field-posts" type="text" value={apellido} placeholder="Apellido:" onChange={(e) => setApellido(e.target.value)}/>
                             <input className="field-posts" type="number" value={idRoster} placeholder="ID Roster:" onChange={(e) => setIDroster(e.target.value)}/>
-                            <input className="field-posts" type="text" value={experiencia} placeholder="Experiencia:" onChange={(e) => setExperiencia(e.target.value)}/>
+                            <input className="field-posts" type="text" value={experiencia} placeholder="Experiencia ('\' Salto de Linea):" onChange={(e) => setExperiencia(e.target.value)}/>
                             <input className="field-posts" type="text" value={descripcion} placeholder="Descripcion:" onChange={(e) => setDescripcion(e.target.value)}/>
                             <input className="field-posts" type="text" value={rol} placeholder="Rol:" onChange={(e) => setRol(e.target.value)}/>
                             <button type="button" className="submit-btn" onClick={() => HandleAddUser()}>{loading ? "Agregando..." : "Agregar"}</button>
