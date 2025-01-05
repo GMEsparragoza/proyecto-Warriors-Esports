@@ -1,0 +1,50 @@
+.titulo-tablas {
+    color: #f1af5d;
+    /* Color principal para los encabezados */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+th,
+td {
+    border: 1px solid #f1af5d;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f1af5d;
+    /* Color principal para el encabezado de las tablas */
+    color: white;
+    /* Texto en blanco */
+}
+
+td {
+    background-color: #1a1a1a;
+    /* Fondo oscuro para filas de datos */
+    color: white;
+    /* Texto en blanco */
+}
+
+tr:nth-child(even) {
+    background-color: #333333;
+    /* Alternar fondo para filas pares */
+}
+
+tr:hover {
+    background-color: #444444;
+    /* Color de fondo al pasar el mouse */
+}
+
+table caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #f1af5d;
+    /* Color principal */
+}

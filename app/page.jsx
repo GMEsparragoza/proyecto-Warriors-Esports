@@ -1,6 +1,7 @@
 import { Footer } from '@/components/Footer/footer';
 import PostCortas from '@/components/Post-Cortas/postCortas';
 import './index.css'
+import { LINK_PRESENTACION } from '@/utils/config';
 
 export const metadata = {
   title: "Inicio - Warrior Esports",
@@ -14,7 +15,7 @@ export default function Home() {
         <main>
           <div className="presentacion-container">
             <div className="presentacion">
-              <iframe id="video-presentacion" src="https://www.youtube.com/embed/NcQgg-MvgFw" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              <iframe id="video-presentacion" src={LINK_PRESENTACION} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
           </div>
         </main>

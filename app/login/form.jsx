@@ -14,7 +14,13 @@ export const Form = () => {
 
     useEffect(() => {
         if (!initialLoading && user) {
-            router.push("/admin");
+            const previousPath = localStorage.getItem('previousPath');
+            if (previousPath === '/forms') {
+                localStorage.setItem('previousPath', window.location.pathname);
+                router.push('/forms');
+            } else {
+                router.push('/admin');
+            }
         }
     }, [user, initialLoading, router]);
 

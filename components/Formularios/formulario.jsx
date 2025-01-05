@@ -52,12 +52,13 @@ export const Formulario = () => {
             return;
         }
         try {
-            await agregarFormPlayer(nombre, apellido, edad, nick, rangoActual, rangoPeak, roles, exp);
+            await agregarFormPlayer(nombre, apellido, edad, nick, twitter, rangoActual, rangoPeak, roles, exp);
             mostrarAlerta({
                 bien: true,
                 titulo: "¡Formulario enviado!",
                 parrafo: "Se envio el formulario con exito"
             });
+            setLoading(false);
         } catch (err) {
             mostrarAlerta({
                 bien: false,
@@ -81,7 +82,7 @@ export const Formulario = () => {
 
     const HandleFormStaff = async () => {
         setLoading(true);
-        if (!nombre || !apellido || !edadMinima || !nick || !twitter || !rolStaff || !exp) {
+        if (!nombre || !apellido || !edad || !nick || !twitter || !rolStaff || !exp) {
             mostrarAlerta({
                 bien: false,
                 titulo: "¡Datos faltantes!",
@@ -91,12 +92,13 @@ export const Formulario = () => {
             return;
         }
         try {
-            await agregarFormStaff(nombre, apellido, edad, nick, rolStaff, exp);
+            await agregarFormStaff(nombre, apellido, edad, nick, twitter, rolStaff, exp);
             mostrarAlerta({
                 bien: true,
                 titulo: "¡Formulario enviado!",
                 parrafo: "Se envio el formulario con exito"
             });
+            setLoading(false);
         } catch (err) {
             mostrarAlerta({
                 bien: false,
@@ -162,16 +164,16 @@ export const Formulario = () => {
                         <input className="input-field" type="url" value={twitter} placeholder="Twitter" onChange={(e) => setTwitter(e.target.value)} />
                         <select value={rolStaff} onChange={(e) => setRolStaff(e.target.value)} className="RolStaff" id="RolStaff">
                             <option value="0">Selecciona</option>
-                            <option value="1">Co-Ceo</option>
-                            <option value="2">Director Deportivo</option>
-                            <option value="3">Manager</option>
-                            <option value="4">Psicologo Deportivo</option>
-                            <option value="5">Proyect Manager</option>
-                            <option value="6">Community Manager</option>
-                            <option value="7">Head Coach</option>
-                            <option value="8">Assistant Coach</option>
-                            <option value="9">Performance Coach</option>
-                            <option value="10">Analista</option>
+                            <option value="Co-Ceo">Co-Ceo</option>
+                            <option value="Director Deportivo">Director Deportivo</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Psicologo Deportivo">Psicologo Deportivo</option>
+                            <option value="Proyect Manager">Proyect Manager</option>
+                            <option value="Community Manager">Community Manager</option>
+                            <option value="Head Coach">Head Coach</option>
+                            <option value="Assistant Coach">Assistant Coach</option>
+                            <option value="Performance Coach">Performance Coach</option>
+                            <option value="Analista">Analista</option>
                         </select>
                         <input className="input-field" type="text" value={exp} placeholder="Experiencia" onChange={(e) => setExp(e.target.value)} />
                         <button type="button" className="submit-btn" onClick={() => HandleFormStaff()}>{loading ? "Enviando..." : "Enviar"}</button>
